@@ -1,0 +1,23 @@
+{
+	"name": "typescript-tutorial",
+	"version": "1.0.0",
+	"description": "TypeScript tutorial for beginners.",
+	"main": "ts-basics.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "lite-server"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/RajibRaj/typescript-tutorial.git"
+	},
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/RajibRaj/typescript-tutorial/issues"
+	},
+	"homepage": "https://github.com/RajibRaj/typescript-tutorial#readme",
+	"devDependencies": {
+		"lite-server": "^2.6.1"
+	}
+}
