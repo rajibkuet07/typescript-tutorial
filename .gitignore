@@ -25,3 +25,7 @@ yarn-error.log*
 .zip
 .vscode
 .env
+
+# exclude js files
+*.js
+**/*.js
