@@ -4,12 +4,12 @@
 /node_modules
 /.pnp
 .pnp.js
+tsconfig.json
 
 # testing
-/coverage
 
 # production
-/build
+/dist
 
 # misc
 .DS_Store
@@ -27,5 +27,5 @@ yarn-error.log*
 .env
 
 # exclude js files
-*.js
 **/*.js
+**/*.js.map

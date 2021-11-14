@@ -41,12 +41,12 @@
  * However, using TS we can omit this issue.
  */
 console.log('## Basic example');
-// Using JS
-function add(a, b) {
+// Using JS - As its TS file the following will rise error
+/* function add(a, b) {
 	return a + b;
-}
-console.log('JS Add Number = ', add(5, 10)); // 15
-console.log('JS Add String = ', add('15', '10')); // 1510 - string - which is an unwanted result
+} */
+// console.log('JS Add Number = ', add(5, 10)); // 15
+// console.log('JS Add String = ', add('15', '10')); // 1510 - string - which is an unwanted result
 // NOTE: However we can omit this by using sanitization, but its hard to maintain all the time.
 
 // Using TS
@@ -71,7 +71,8 @@ console.log('## DOM Example');
  * Using an "!" sign after the query line. It indicates that the element with the ID is must exist in the dom.
  * "as HTMLInputElement" is used to indicate that its an input element which has a value property.
  */
-var button = document.getElementById('addButton');
+// var button = document.getElementById('addButton'); // Will rise development/compilation error
+var button = document.getElementById('addButton')!;
 var input_one = document.getElementById('firstNumber')! as HTMLInputElement;
 var input_two = document.getElementById('secondNumber')! as HTMLInputElement;
 
@@ -331,4 +332,4 @@ console.log('## Never Types');
 function neverType(message: string, code: number): never {
 	throw { message, errorCode: code };
 }
-neverType('Custom Error', 600);
+neverType('Custom Error', 501);
