@@ -17,16 +17,16 @@
 
 /**
  * =======Table Of Content=======
- * ### Basic example
- * ### Example using dom element
- * ### Core types
- * ### Union type
- * ### Type aliases
- * ### Function return types & 'void'
- * ### Function as type
- * ### Function Types & Callbacks
- * ### Unknown Types
- * ### Never Types
+ * ### Basic example - 34
+ * ### Example using dom element - 60
+ * ### Core types - 84
+ * ### Union type - 195
+ * ### Type aliases - 227
+ * ### Function return types & 'void' - 255
+ * ### Function as type -273
+ * ### Function Types & Callbacks -284
+ * ### Unknown Types - 305
+ * ### Never Types - 324
  * =======/table of content======
  */
 
@@ -332,4 +332,4 @@ console.log('## Never Types');
 function neverType(message: string, code: number): never {
 	throw { message, errorCode: code };
 }
-neverType('Custom Error', 501);
+// neverType('Custom Error', 501); // uncomment to test
