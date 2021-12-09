@@ -73,8 +73,9 @@ console.log('## DOM Example');
  */
 // var button = document.getElementById('addButton'); // Will rise development/compilation error
 var button = document.getElementById('addButton')!;
-var input_one = document.getElementById('firstNumber')! as HTMLInputElement;
+var input_one = <HTMLInputElement>document.getElementById('firstNumber')!;
 var input_two = document.getElementById('secondNumber')! as HTMLInputElement;
+// Either `<HTMLInputElement>` or `as HTMLInputElement` can be used to indicate the element
 
 button.addEventListener('click', function () {
 	console.log('TS DOM Add = ', addTs(+input_one.value, +input_two.value)); // "+" used to typecast the value to integer/number cause input value is always string.
