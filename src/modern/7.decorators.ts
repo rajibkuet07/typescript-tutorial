@@ -79,8 +79,8 @@ class UsefulDecorators {
 		console.log('Creating new person factory...');
 	}
 }
-const usefullDec = new UsefulDecorators();
-console.log(usefullDec);
+const usefulDec = new UsefulDecorators();
+console.log(usefulDec);
 
 /**
  * ===== Use Multiple Decorators
@@ -133,7 +133,7 @@ class Product {
 /**
  * ===== Accessor, Method & Parameter Decorators
  *
- * Accessor and Method decorator are same and have same argument.
+ * Accessor and Method decorator are same and have same arguments.
  * The only difference is the descriptors are different.
  * Takes 3 args
  */
@@ -178,4 +178,19 @@ class AccessorAndMethod {
 	getPriceWithTax(@Log4 tax: number) {
 		return this._price * (1 + tax);
 	}
+}
+
+/**
+ * ===== Returning or changing a class in a class
+ *
+ * Class decorators or method decorators are also capable to return something.
+ */
+console.log('## Returning or changing a class in a class');
+function WIthTemplateReturn(template: string, hookId: string) {
+	return function (constructor: any) {
+		const obj = new constructor();
+		// as the variable is not needed so we can use `_` as argument instead of any name
+		const hookEl = <HTMLBodyElement>document.getElementById(hookId);
+		hookEl.innerHTML = template;
+	};
 }
