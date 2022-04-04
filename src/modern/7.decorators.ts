@@ -187,10 +187,29 @@ class AccessorAndMethod {
  */
 console.log('## Returning or changing a class in a class');
 function WIthTemplateReturn(template: string, hookId: string) {
-	return function (constructor: any) {
-		const obj = new constructor();
-		// as the variable is not needed so we can use `_` as argument instead of any name
-		const hookEl = <HTMLBodyElement>document.getElementById(hookId);
-		hookEl.innerHTML = template;
+	return function <T extends { new (...args: any[]): { title: string } }>(
+		originalConstructor: T
+	) {
+		console.log('Chaining');
+		return class extends originalConstructor {
+			constructor(..._: any[]) {
+				super();
+				// as the variable is not needed so we can use `_` as argument instead of any name
+				const hookEl = <HTMLBodyElement>document.getElementById(hookId);
+				hookEl.innerHTML = template;
+				console.log(this.title);
+				hookEl.querySelector('h1')!.textContent = this.title;
+			}
+		};
 	};
 }
+
+@WIthTemplateReturn('<h1>This is a test header!</h1>', 'app')
+class Chaining {
+	title: string = 'Rajib';
+
+	constructor() {
+		console.log('Form Class - Chaining');
+	}
+}
+const chaining = new Chaining();

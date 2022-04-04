@@ -41,6 +41,7 @@ const simpleAfterGeneric = <Custom>(
 // 📓 and we can pass any type of data  as initial value
 const [getter2, setter2] = simpleAfterGeneric<string>('Rajib');
 // const [getter101, setter101] = simpleAfterGeneric<string>(12); // will not work
+const [getter101, setter101] = simpleAfterGeneric<number>(12); // will work
 const [getter102, setter102] = simpleAfterGeneric<string | number>(12); // will work
 console.log(getter2());
 setter2('Dey');
